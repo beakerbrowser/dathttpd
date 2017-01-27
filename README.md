@@ -1,6 +1,15 @@
 # dathttpd
 
-Host Dat sites over HTTPs and Dat with DNS hostnames and zero-config TLS (via LetsEncrypt).
+A Web server for [Dat](https://datprotocol.com) and HTTPS.
+
+Dat sites are hosted at public keys, which are the equivalent of IP addresses in the P2P network. The pubkeys are ugly, though! Wouldn't it be nice if your dats could have nice DNS shortnames, and also rehost over HTTPS for people still on legacy browsers?
+
+Dathttpd is for you!
+
+ - Serve sites over Dat at `dat://{subdomain}.{yourdomain.com}`.
+ - Rehost those sites over `https://{subdomain}.{yourdomain.com}`.
+ - Get TLS certs automatically with Lets Encrypt.
+ - (Optionally) Auto-redirect from https -> dat.
 
 ## Usage
 
@@ -48,11 +57,11 @@ letsencrypt:
   email: 'bob@foo.com'
   aggreeTos: true
 sites:
-  datprotocol.myhostname.com:
-    url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
-    datOnly: false
-  portal.myhostname.com:
+  dat.local:
     url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
+    datOnly: false
+  datprotocol.dat.local:
+    url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
     datOnly: true
 ```
 
