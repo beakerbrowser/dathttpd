@@ -18,7 +18,7 @@ Create a config file at `~/.dathttpd.yml`:
 ```yaml
 letsencrypt:
   email: 'bob@foo.com'
-  aggreeTos: true
+  agreeTos: true
 sites:
   dat.local:
     url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
@@ -66,11 +66,13 @@ dathttpd stop
 Here's an example `~/.dathttpd.yml`:
 
 ```yaml
-port: 443
+ports:
+  http: 80
+  https: 443
 directory: ~/.dathttpd
 letsencrypt:
   email: 'bob@foo.com'
-  aggreeTos: true
+  agreeTos: true
 sites:
   dat.local:
     url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
@@ -80,7 +82,13 @@ sites:
     datOnly: true
 ```
 
-### port
+### ports.http
+
+The port to serve the HTTP sites. Defaults to 80. (Optional)
+
+HTTP automatically redirects to HTTPS.
+
+### ports.https
 
 The port to serve the HTTPS sites. Defaults to 443. (Optional)
 
