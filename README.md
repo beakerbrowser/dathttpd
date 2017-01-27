@@ -13,7 +13,22 @@ Dathttpd is for you!
 
 ## Usage
 
-Create a config file at `~/.dathttpd.yml`, then run
+Create a config file at `~/.dathttpd.yml`:
+
+```yaml
+letsencrypt:
+  email: 'bob@foo.com'
+  aggreeTos: true
+sites:
+  dat.local:
+    url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
+    datOnly: false
+  datprotocol.dat.local:
+    url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
+    datOnly: true
+```
+
+Then run
 
 ```
 npm install -g dathttpd
