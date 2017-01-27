@@ -1,0 +1,35 @@
+{
+  "name": "dathttpd",
+  "version": "1.0.0",
+  "description": "Host Dat sites over HTTPs and Dat with DNS hostnames and zero-config TLS (via LetsEncrypt).",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfrazee/dathttpd.git"
+  },
+  "keywords": [
+    "dat",
+    "http",
+    "https"
+  ],
+  "author": "Paul Frazee <pfrazee@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfrazee/dathttpd/issues"
+  },
+  "homepage": "https://github.com/pfrazee/dathttpd#readme",
+  "dependencies": {
+    "auto-sni": "^1.5.1",
+    "dat-next": "^2.3.0",
+    "execa": "^0.6.0",
+    "express": "^4.14.0",
+    "js-yaml": "^3.7.0",
+    "mkdirp": "^0.5.1",
+    "npid": "^0.4.0",
+    "untildify": "^3.0.2"
+  }
+}
