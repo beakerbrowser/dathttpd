@@ -24,7 +24,7 @@
   "homepage": "https://github.com/pfrazee/dathttpd#readme",
   "dependencies": {
     "auto-sni": "^1.5.1",
-    "dat-next": "^2.3.0",
+    "dat-next": "^2.3.6",
     "execa": "^0.6.0",
     "express": "^4.14.0",
     "js-yaml": "^3.7.0",
