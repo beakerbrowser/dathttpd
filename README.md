@@ -4,16 +4,30 @@ A Web server for [Dat](https://datprotocol.com) and HTTPS.
 
 Dat sites are hosted at public keys, which are the equivalent of IP addresses in the P2P network. The pubkeys are ugly, though! Wouldn't it be nice if your dats could have nice DNS shortnames, and also rehost over HTTPS for people still on legacy browsers?
 
-Dathttpd is for you!
+dathttpd is for you!
 
  - Serve sites over Dat at `dat://{subdomain}.{yourdomain.com}`.
  - Rehost those sites over `https://{subdomain}.{yourdomain.com}`.
- - Get TLS certs automatically with Lets Encrypt.
+ - Get TLS certs automatically with Let's Encrypt.
  - (Optionally) Auto-redirect from https -> dat.
+
+## Getting started
+
+### Upload your website to a Dat archive
+
+You can use the [Dat CLI](https://www.npmjs.com/package/dat) or the [Beaker
+Browser](https://github.com/beakerbrowser/beaker).
+
+After uploading your site to a Dat archive, identify the archive's public key.
+You'll need this for your dathttpd config.
+
+### Update your DNS records
+
+Create an A record that points to your server's IP address.
 
 ## Usage
 
-Create a config file at `~/.dathttpd.yml`:
+On your server, create a config file at `~/.dathttpd.yml`:
 
 ```yaml
 letsencrypt:
@@ -31,15 +45,30 @@ sites:
 Then run
 
 ```
+# install build dependencies
+sudo apt-get install libtool m4 automake
+
+# install dathttpd (https://docs.npmjs.com/getting-started/fixing-npm-permissions)
 npm install -g dathttpd
+
+# give node perms to use ports 80 and 443
+sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+
+# start dathttpd
 dathttpd start
 ```
 
-To daemonify the server in Debian-based systems, run
+To daemonify the server in Debian-based systems, stop the dathttpd process and
+then run:
 
 ```
+# install a helper tool
 npm install -g add-to-systemd
-sudo add-to-systemd dathttpd $(which dathttpd) start
+
+# create a systemd entry for dathttpd
+sudo add-to-systemd dathttpd --user $(whoami) $(which dathttpd) start
+
+# start the dathttpd service
 sudo systemctl start dathttpd
 ```
 
@@ -94,7 +123,7 @@ The port to serve the HTTPS sites. Defaults to 443. (Optional)
 
 ### directory
 
-The directory to store the site files. Defaults to ~/.dathttpd. (Optional)
+The directory where dathttpd will store your Dat archive's files. Defaults to ~/.dathttpd. (Optional)
 
 ### letsencrypt.email
 
