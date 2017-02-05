@@ -13,13 +13,13 @@ dathttpd is for you!
 
 ## Getting started
 
-### Upload your website to a Dat archive
+### Start hosting your website with Dat
 
 You can use the [Dat CLI](https://www.npmjs.com/package/dat) or the [Beaker
 Browser](https://github.com/beakerbrowser/beaker).
 
-After uploading your site to a Dat archive, identify the archive's public key.
-You'll need this for your dathttpd config.
+After uploading your site to a Dat archive, identify the archive's URL. You'll
+need this for your dathttpd config.
 
 ### Update your DNS records
 
