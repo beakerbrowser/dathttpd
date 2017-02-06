@@ -55,7 +55,7 @@ npm install -g dathttpd
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
 
 # start dathttpd
-dathttpd start
+dathttpd
 ```
 
 To daemonify the server in Debian-based systems, stop the dathttpd process and
@@ -66,28 +66,10 @@ then run:
 npm install -g add-to-systemd
 
 # create a systemd entry for dathttpd
-sudo add-to-systemd dathttpd --user $(whoami) $(which dathttpd) start
+sudo add-to-systemd dathttpd --user $(whoami) $(which dathttpd)
 
 # start the dathttpd service
 sudo systemctl start dathttpd
-```
-
-You can jump into the config with your default editor via
-
-```
-dathttpd edit
-```
-
-Then reload the server via
-
-```
-dathttpd reload
-```
-
-Or stop it with
-
-```
-dathttpd stop
 ```
 
 ## Config
@@ -149,4 +131,4 @@ If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect
 
 ## Env Vars
 
-  - `CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`
+  - `DATHTTPD_CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`

@@ -29,7 +29,6 @@
     "greenlock-express": "^2.0.9",
     "js-yaml": "^3.7.0",
     "mkdirp": "^0.5.1",
-    "npid": "^0.4.0",
     "untildify": "^3.0.2",
     "vhost": "^3.0.2"
   }
