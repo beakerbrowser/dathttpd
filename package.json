@@ -29,6 +29,7 @@
     "greenlock-express": "^2.0.9",
     "js-yaml": "^3.7.0",
     "mkdirp": "^0.5.1",
+    "prom-client": "^7.0.1",
     "untildify": "^3.0.2",
     "vhost": "^3.0.2"
   }
