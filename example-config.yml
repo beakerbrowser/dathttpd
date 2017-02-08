@@ -1,6 +1,7 @@
 ports:
   http: 80
   https: 443
+  metric: 8089
 directory: ~/.dathttpd
 letsencrypt:
   email: 'bob@foo.com'

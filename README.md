@@ -80,6 +80,7 @@ Here's an example `~/.dathttpd.yml`:
 ports:
   http: 80
   https: 443
+  metric: 8089
 directory: ~/.dathttpd
 letsencrypt:
   email: 'bob@foo.com'
@@ -132,3 +133,11 @@ If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect
 ## Env Vars
 
   - `DATHTTPD_CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`
+
+## Metrics
+
+dathttpd have built-in support for [Prometheus](https://prometheus.io). The metric is exposed at `http://::8089` by default.
+
+Currently we have only one metric:
+
+* `app_https_hits{hostname}` : total https requests served since server restart.
