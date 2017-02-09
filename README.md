@@ -107,6 +107,10 @@ The port to serve the HTTPS sites. Defaults to 443. (Optional)
 
 The directory where dathttpd will store your Dat archive's files. Defaults to ~/.dathttpd. (Optional)
 
+### letsencrypt
+
+Settings for LetsEncrypt. If false or unset, HTTPS will be disabled.
+
 ### letsencrypt.email
 
 The email to send Lets Encrypt? notices to. (Required)
@@ -132,3 +136,4 @@ If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect
 ## Env Vars
 
   - `DATHTTPD_CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`
+  - `NODE_ENV=debug|staging|production` set to `debug` or `staging` to use the lets-encrypt testing servers.
