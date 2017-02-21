@@ -10,6 +10,7 @@ dathttpd is for you!
  - Rehost those sites over `https://{subdomain}.{yourdomain.com}`.
  - Get TLS certs automatically with Let's Encrypt.
  - (Optionally) Auto-redirect from https -> dat.
+ - Metrics dashboard
 
 ## Getting started
 
@@ -153,8 +154,29 @@ If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect
 
 ## Metrics
 
-dathttpd have built-in support for [Prometheus](https://prometheus.io). The metric is exposed at `http://::8089` by default.
+dathttpd have built-in support for [Prometheus](https://prometheus.io), which can be visualized by [Grafana](http://grafana.org/). The metric is exposed at `http://::8089` by default.
 
-Currently we have only one metric:
+![./grafana-screenshot.png](./grafana-screenshot.png)
 
-* `app_https_hits{hostname}` : total https requests served since server restart.
+Follow these steps:
+
+ 1. [Install Prometheus](https://prometheus.io/download/) on your server.
+ 2. [Install Grafana](http://grafana.org/download/) on your server.
+ 3. Update the `prometheus.yml` config.
+ 4. Start prometheus and grafana.
+ 5. Add prometheus as a data source to grafana. (It should be running at localhost:9090.)
+ 6. Import [this grafana dashboard](./grafana-dashboard.json).
+
+Your prometheus.yml config should include have the scrape_configs set like this:
+
+```yml
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'dathttpd'
+    static_configs:
+      - targets: ['localhost:8089']
+```
+
+Report any issues you have along the way!
