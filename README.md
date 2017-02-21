@@ -92,6 +92,8 @@ sites:
   datprotocol.dat.local:
     url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
     datOnly: true
+  proxy.local:
+    proxy: http://localhost:8080
 ```
 
 ### ports.http
@@ -103,6 +105,10 @@ HTTP automatically redirects to HTTPS.
 ### ports.https
 
 The port to serve the HTTPS sites. Defaults to 443. (Optional)
+
+### ports.metric
+
+The port to serve the prometheus metrics. Defaults to 8089. (Optional)
 
 ### directory
 
@@ -124,11 +130,17 @@ Do you agree to the terms of service of Lets Encrypt? (Required, must be true)
 
 A listing of the sites to host. Each site is labeled (keyed) by the hostname you want the site to serve at.
 
-You'll need to configure the DNS entry for the hostname to point to the server. For instance, if using `portal.myhostname.com`, you'll need a DNS entry pointing `portal.myhostname.com` to the server.
+Sites can either host dat archives or proxy to a URL. To make a dat-site, set the `url` attribute. To make a proxy, set the `proxy` attribute.
+
+You'll need to configure the DNS entry for the hostname to point to the server. For instance, if using `site.myhostname.com`, you'll need a DNS entry pointing `site.myhostname.com` to the server.
 
 ### sites.{hostname}.url
 
-The Dat URL of the site to host. (Required)
+The Dat URL of the site to host.
+
+### sites.{hostname}.proxy
+
+The HTTP URL of the site to proxy.
 
 ### sites.{hostname}.datOnly
 

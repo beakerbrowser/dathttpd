@@ -13,3 +13,5 @@ sites:
   datprotocol.dat.local:
     url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
     datOnly: true
+  proxy.local:
+    proxy: http://localhost:1234
