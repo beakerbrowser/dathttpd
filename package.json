@@ -32,6 +32,7 @@
     "multidat": "^2.1.0",
     "prom-client": "^7.0.1",
     "response-time": "^2.3.2",
+    "serve-index": "^1.8.0",
     "toiletdb": "^1.2.1",
     "untildify": "^3.0.2",
     "vhost": "^3.0.2"
