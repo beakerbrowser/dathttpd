@@ -29,7 +29,7 @@
     "http-proxy": "^1.16.2",
     "js-yaml": "^3.7.0",
     "mkdirp": "^0.5.1",
-    "multidat": "^2.1.0",
+    "multidat": "^5.0.1",
     "prom-client": "^7.0.1",
     "response-time": "^2.3.2",
     "toiletdb": "^1.2.1",
