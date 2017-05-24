@@ -1,6 +1,6 @@
 {
   "name": "dathttpd",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Host Dat sites over HTTPs and Dat with DNS hostnames and zero-config TLS (via LetsEncrypt).",
   "main": "index.js",
   "bin": "index.js",
