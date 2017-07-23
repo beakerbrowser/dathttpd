@@ -27,7 +27,7 @@
     "express": "^4.14.0",
     "greenlock-express": "^2.0.9",
     "http-proxy": "^1.16.2",
-    "js-yaml": "^3.7.0",
+    "js-yaml": "^3.9.0",
     "mkdirp": "^0.5.1",
     "multidat": "^5.0.1",
     "prom-client": "^7.0.1",
