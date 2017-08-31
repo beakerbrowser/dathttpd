@@ -29,6 +29,7 @@
     "http-proxy": "^1.16.2",
     "js-yaml": "^3.9.1",
     "mkdirp": "^0.5.1",
+    "ms": "^2.0.0",
     "multidat": "^5.0.1",
     "prom-client": "^7.0.1",
     "response-time": "^2.3.2",

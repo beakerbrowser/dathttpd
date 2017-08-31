@@ -147,6 +147,10 @@ The HTTP URL of the site to proxy.
 
 If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect to the dat:// location. Defaults to false. (Optional)
 
+### sites.{hostname}.hsts
+
+If true, serve the [HSTS header](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). You can specify how long the strict-transport rule lasts as the value. (parsed using [the ms module](https://www.npmjs.com/package/ms)). If `true` is given, will default to 7 days. Defaults to false. (Optional)
+
 ## Env Vars
 
   - `DATHTTPD_CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`
