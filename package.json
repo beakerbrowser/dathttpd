@@ -36,6 +36,7 @@
     "serve-index": "^1.8.0",
     "toiletdb": "^1.2.1",
     "untildify": "^3.0.2",
-    "vhost": "^3.0.2"
+    "vhost": "^3.0.2",
+    "yargs": "^10.0.3"
   }
 }

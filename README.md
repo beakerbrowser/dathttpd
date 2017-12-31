@@ -151,6 +151,10 @@ If true, rather than serve the assets over HTTPS, dathttpd will serve a redirect
 
 If true, serve the [HSTS header](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). You can specify how long the strict-transport rule lasts as the value. (parsed using [the ms module](https://www.npmjs.com/package/ms)). If `true` is given, will default to 7 days. Defaults to false. (Optional)
 
+## Command Line Flags
+
+  - `--config <path>` use the config file at the given path instead of the default `~/.dathttpd.yml`. Overrides the value of the `DATHTTPD_CONFIG` env var.
+
 ## Env Vars
 
   - `DATHTTPD_CONFIG=cfg_file_path` specify an alternative path to the config than `~/.dathttpd.yml`
