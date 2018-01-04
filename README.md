@@ -26,6 +26,10 @@ need this for your dathttpd config.
 
 Create an A record that points to your server's IP address.
 
+### Firewall rules
+
+Make sure your server is accessible by port 80 (http), 443 (https), and 3282 (dat).
+
 ## Usage
 
 On your server, create a config file at `~/.dathttpd.yml`:
@@ -47,7 +51,7 @@ Then run
 
 ```
 # install build dependencies
-sudo apt-get install libtool m4 automake
+sudo apt-get install libtool m4 automake libcap2-bin build-essentials
 
 # install dathttpd (https://docs.npmjs.com/getting-started/fixing-npm-permissions)
 npm install -g dathttpd
