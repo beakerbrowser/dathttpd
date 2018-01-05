@@ -1,0 +1,33 @@
+{
+  "asi": true,
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": false,
+  "freeze": false,
+  "immed": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "plusplus": false,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": false,
+  "maxparams": 20,
+  "maxdepth": 5,
+  "maxlen": 120,
+  "node": true,
+  "globals": {
+    "angular": false,
+    "$": false,
+    "module": false,
+    "document": false,
+    "require": false
+  }
+}
