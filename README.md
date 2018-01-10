@@ -32,26 +32,24 @@ Make sure your server is accessible by port 80 (http), 443 (https), and 3282 (da
 
 ## Usage
 
-On your server, create a config file at `~/.dathttpd.yml`:
+On your server, create a config file at `~/.dathttpd.yml` that follows this structure:
 
 ```yaml
 letsencrypt:
   email: 'bob@foo.com'
   agreeTos: true
 sites:
-  dat.local:
+  my-site.com:
     url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
-    datOnly: false
-  datprotocol.dat.local:
+  my-other-site.com:
     url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
-    datOnly: true
 ```
 
 Then run
 
 ```
 # install build dependencies
-sudo apt-get install libtool m4 automake libcap2-bin build-essentials
+sudo apt-get install libtool m4 automake libcap2-bin build-essential
 
 # install dathttpd (https://docs.npmjs.com/getting-started/fixing-npm-permissions)
 npm install -g dathttpd
@@ -91,13 +89,13 @@ letsencrypt:
   email: 'bob@foo.com'
   agreeTos: true
 sites:
-  dat.local:
+  my-site.com:
     url: dat://1f968afe867f06b0d344c11efc23591c7f8c5fb3b4ac938d6000f330f6ee2a03/
     datOnly: false
-  datprotocol.dat.local:
+  my-other-site.com:
     url: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93/
     datOnly: true
-  proxy.local:
+  my-proxy.com:
     proxy: http://localhost:8080
 ```
 
