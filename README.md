@@ -97,6 +97,8 @@ sites:
     datOnly: true
   my-proxy.com:
     proxy: http://localhost:8080
+  my-old-site.com:
+    redirect: https://my-site.com
 ```
 
 ### ports.http
@@ -144,6 +146,10 @@ The Dat URL of the site to host.
 ### sites.{hostname}.proxy
 
 The HTTP URL of the site to proxy.
+
+### sites.{hostname}.redirect
+
+The HTTP URL of the site to redirect traffic to.
 
 ### sites.{hostname}.datOnly
 
