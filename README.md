@@ -1,5 +1,11 @@
 # dathttpd
 
+---
+
+DatHTTPD has been replaced by [Homebase](https://github.com/beakerbrowser/homebase)! Same basic design, but more features and an easier-to-pronounce name.
+
+---
+
 A Web server for [Dat](https://datprotocol.com) and HTTPS.
 
 Dat sites are hosted at public keys, which are the equivalent of IP addresses in the P2P network. The pubkeys are ugly, though! Wouldn't it be nice if your dats could have nice DNS shortnames, and also rehost over HTTPS for people still on legacy browsers?
